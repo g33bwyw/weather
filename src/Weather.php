@@ -46,8 +46,9 @@ class Weather
             'extensions' => $type,
             'output' => $format,
         ];
+
         try {
-            $response = $this->getHttpClient()->get($this->baseUri, $query);
+            $response = $this->getHttpClient()->get($this->baseUri, ['query' => $query]);
             $data = $response->getBody()->getContents();
         } catch (\Exception $e) {
             throw new HttpException($e->getMessage(), $e->getCode(), $e);
