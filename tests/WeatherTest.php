@@ -1,11 +1,12 @@
 <?php
+
 /*
- * This file is part of the openapi package.
+ * This file is part of the wyw/weather.
  *
- * (c) 商城组<shop-rd@boqii.com>
+ *   (c) wangyawei <wangyw@boqii.com>
  *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
+ *  This source file is subject to the MIT license that is bundled.
+ *
  */
 
 namespace Wangyw\Weather\Tests;
@@ -51,10 +52,10 @@ class WeatherTest extends TestCase
         //模拟http请求返回
         $client = \Mockery::mock(Client::class);
         $query = [
-            'key'        => 'mokey-key',
-            'city'       => '深圳',
+            'key' => 'mokey-key',
+            'city' => '深圳',
             'extensions' => 'base',
-            'output'     => 'json',
+            'output' => 'json',
         ];
         $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
         $client->allows()->get($url, ['query' => $query])->andReturn($response);

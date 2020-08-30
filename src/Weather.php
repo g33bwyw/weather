@@ -3,9 +3,10 @@
 /*
  * This file is part of the wyw/weather.
  *
- * (c) wangyawei <wangyw@boqii.com>
+ *   (c) wangyawei <wangyw@boqii.com>
  *
- * This source file is subject to the MIT license that is bundled.
+ *  This source file is subject to the MIT license that is bundled.
+ *
  */
 
 namespace Wangyw\Weather;
@@ -33,9 +34,6 @@ class Weather
 
     /**
      * Weather constructor.
-     *
-     * @param string $key
-     * @param string $baseUri
      */
     public function __construct(string $key, string $baseUri)
     {
@@ -43,16 +41,12 @@ class Weather
         $this->baseUri = $baseUri;
     }
 
-    /**
-     * @param array $options
-     */
     public function setGuzzleOptions(array $options)
     {
         $this->guzzleOptions = $options;
     }
 
     /**
-     * @param string        $cityName
      * @param string|string $type
      * @param string|string $format
      *
@@ -67,10 +61,10 @@ class Weather
             throw new InvalidException('参数错误', 2001);
         }
         $query = [
-            'key'        => $this->key,
-            'city'       => $cityName,
+            'key' => $this->key,
+            'city' => $cityName,
             'extensions' => $type,
-            'output'     => $format,
+            'output' => $format,
         ];
 
         try {
