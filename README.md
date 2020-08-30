@@ -1,7 +1,8 @@
 <h1 align="center"> weather </h1>
 
 <p align="center"> 基于高德地图的测试包.</p>
-
+[![Build status](https://travis-ci.org/g33bwyw/weather.svg?branch=master)](https://travis-ci.org/github/g33bwyw/weather) 
+![StyleCI build status](https://github.styleci.io/repos/289841371/shield) 
 
 ## 安装
 
