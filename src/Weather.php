@@ -1,12 +1,13 @@
 <?php
+
 /*
- * This file is part of the openapi package.
+ * This file is part of the wyw/weather.
  *
- * (c) 商城组<shop-rd@boqii.com>
+ * (c) wangyawei <wangyw@boqii.com>
  *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
+ * This source file is subject to the MIT license that is bundled.
  */
+
 namespace Wyw\Weather;
 
 use GuzzleHttp\Client;
@@ -15,26 +16,48 @@ use Wyw\Weather\Exceptions\InvalidException;
 
 class Weather
 {
+    /**
+     * @var string
+     */
     protected $key;
+
+    /**
+     * @var string
+     */
     protected $baseUri;
+
+    /**
+     * @var array
+     */
     protected $guzzleOptions = [];
 
-    public function __construct(string  $key, string $baseUri)
+    /**
+     * Weather constructor.
+     * @param string $key
+     * @param string $baseUri
+     */
+    public function __construct(string $key, string $baseUri)
     {
         $this->key = $key;
         $this->baseUri = $baseUri;
     }
 
+    /**
+     * @param array $options
+     */
     public function setGuzzleOptions(array $options)
     {
         $this->guzzleOptions = $options;
     }
 
-    public function getHttpClient()
-    {
-        return (new Client($this->guzzleOptions));
-    }
-
+    /**
+     * @param string $cityName
+     * @param string|string $type
+     * @param string|string $format
+     * @return mixed
+     * @throws HttpException
+     * @throws InvalidException
+     */
     public function getWeather(string $cityName, string $type = 'base', string $format = 'json')
     {
         if (!in_array(strtolower($format), ['xml', 'json'])) {
@@ -54,8 +77,14 @@ class Weather
             throw new HttpException($e->getMessage(), $e->getCode(), $e);
         }
 
-
-        return $format == 'json' ? json_decode($data, true) : $data;
+        return 'json' == $format ? json_decode($data, true) : $data;
     }
 
+    /**
+     * @return Client
+     */
+    public function getHttpClient()
+    {
+        return new Client($this->guzzleOptions);
+    }
 }
