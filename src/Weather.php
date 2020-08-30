@@ -33,6 +33,7 @@ class Weather
 
     /**
      * Weather constructor.
+     *
      * @param string $key
      * @param string $baseUri
      */
@@ -51,12 +52,14 @@ class Weather
     }
 
     /**
-     * @param string $cityName
+     * @param string        $cityName
      * @param string|string $type
      * @param string|string $format
-     * @return mixed
+     *
      * @throws HttpException
      * @throws InvalidException
+     *
+     * @return mixed
      */
     public function getWeather(string $cityName, string $type = 'base', string $format = 'json')
     {
@@ -64,10 +67,10 @@ class Weather
             throw new InvalidException('参数错误', 2001);
         }
         $query = [
-            'key' => $this->key,
-            'city' => $cityName,
+            'key'        => $this->key,
+            'city'       => $cityName,
             'extensions' => $type,
-            'output' => $format,
+            'output'     => $format,
         ];
 
         try {

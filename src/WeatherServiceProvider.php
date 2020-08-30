@@ -10,7 +10,6 @@
 
 namespace Wangyw\Weather;
 
-
 class WeatherServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     protected $defer = true;
