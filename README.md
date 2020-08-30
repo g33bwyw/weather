@@ -6,12 +6,12 @@
 ## 安装
 
 ```shell
-$ composer require wyw/weather -vvv
+$ composer require wangyw/weather -vvv
 ```
 
 ## 使用
 ```
-use Wyw\Weather\Weather;
+use Wangyw\Weather\Weather;
 
 $key = '*************';
 $url = 'https://restapi.amap.com/v3/weather/weatherInfo';

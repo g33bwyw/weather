@@ -8,7 +8,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Wyw\Weather;
+namespace Wangyw\Weather;
 
 
 class WeatherServiceProvider extends \Illuminate\Support\ServiceProvider

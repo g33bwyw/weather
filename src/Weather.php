@@ -8,11 +8,11 @@
  * This source file is subject to the MIT license that is bundled.
  */
 
-namespace Wyw\Weather;
+namespace Wangyw\Weather;
 
 use GuzzleHttp\Client;
-use Wyw\Weather\Exceptions\HttpException;
-use Wyw\Weather\Exceptions\InvalidException;
+use Wangyw\Weather\Exceptions\HttpException;
+use Wangyw\Weather\Exceptions\InvalidException;
 
 class Weather
 {

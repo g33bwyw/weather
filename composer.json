@@ -1,5 +1,5 @@
 {
-    "name": "wyw\/weather",
+    "name": "wangyw\/weather",
     "description": "这是一个测试的天气扩展包",
     "license": "MIT",
     "authors": [
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Wyw\\Weather\\": "src"
+            "Wangyw\\Weather\\": "src"
         }
     },
     "require-dev": {
@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Wyw\\Weather\\WeatherServiceProvider"
+                "Wangyw\\Weather\\WeatherServiceProvider"
             ]
         }
     }

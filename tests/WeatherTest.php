@@ -7,16 +7,16 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-namespace Wyw\Weather\Tests;
+namespace Wangyw\Weather\Tests;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Response;
 use Mockery\Matcher\AnyArgs;
 use PHPUnit\Framework\TestCase;
-use Wyw\Weather\Exceptions\HttpException;
-use Wyw\Weather\Exceptions\InvalidException;
-use Wyw\Weather\Weather;
+use Wangyw\Weather\Exceptions\HttpException;
+use Wangyw\Weather\Exceptions\InvalidException;
+use Wangyw\Weather\Weather;
 
 class WeatherTest extends TestCase
 {
