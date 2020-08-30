@@ -19,12 +19,12 @@ $weather = new Weather('mock_key', $url);
 
 ```
 
-##获取实时天气
+## 获取实时天气
 ```
 $response = $weather->getWeather('深圳', 'base', 'json');
 ```
 
-##参数说明
+## 参数说明
 ```
 getWeather(string $cityName, string $type = 'base', string $format = 'json')
 ```
@@ -32,7 +32,7 @@ getWeather(string $cityName, string $type = 'base', string $format = 'json')
 - $type -返回内容类型 base:实时天气 all:返回预报天气,默认为base
 - $format -返回内容格式 默认为json ,可以指定为xml
 
-##在laravel中使用
+## 在laravel中使用
 - 在config文件中添加weather.php
 ```
 return [
