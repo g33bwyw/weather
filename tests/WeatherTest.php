@@ -7,6 +7,7 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
 namespace Wangyw\Weather\Tests;
 
 use GuzzleHttp\Client;
@@ -32,7 +33,6 @@ class WeatherTest extends TestCase
         $this->fail('参数错误通过验证失败');
     }
 
-
     public function testHttpException()
     {
         $url = 'https://qrestapi.amap.com/v3/weather/weatherInfo';
@@ -51,10 +51,10 @@ class WeatherTest extends TestCase
         //模拟http请求返回
         $client = \Mockery::mock(Client::class);
         $query = [
-            'key' => 'mokey-key',
-            'city' => '深圳',
+            'key'        => 'mokey-key',
+            'city'       => '深圳',
             'extensions' => 'base',
-            'output' => 'json',
+            'output'     => 'json',
         ];
         $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
         $client->allows()->get($url, ['query' => $query])->andReturn($response);
@@ -65,7 +65,6 @@ class WeatherTest extends TestCase
         $weather->allows()->getHttpClient()->andReturn($client);
 
         $this->assertSame(['success' => true], $weather->getWeather('深圳'));
-
     }
 
     //测试获取天气信息获取异常
@@ -81,7 +80,6 @@ class WeatherTest extends TestCase
         $this->expectExceptionMessage('request time out');
         $weather->getWeather('深圳');
     }
-
 
     //测试获取Httpclient
     public function testGetHttpClient()
