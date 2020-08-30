@@ -1,28 +1,39 @@
 <h1 align="center"> weather </h1>
 
-<p align="center"> 这是一个测试的天气扩展包.</p>
+<p align="center"> 基于高德地图的测试包.</p>
 
 
-## Installing
+## 安装
 
 ```shell
 $ composer require wyw/weather -vvv
 ```
 
-## Usage
+## 使用
+```
+use Wyw\Weather\Weather;
 
-TODO
+$key = '*************';
+$url = 'https://restapi.amap.com/v3/weather/weatherInfo';
+$weather = new Weather('mock_key', $url);
 
-## Contributing
+```
 
-You can contribute in one of three ways:
+##获取实时天气
+```
+$response = $weather->getWeather('深圳', 'base', 'json');
+```
 
-1. File bug reports using the [issue tracker](https://github.com/wyw/weather/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/wyw/weather/issues).
-3. Contribute new features or update the wiki.
-
-_The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._
-
+##参数说明
+```
+getWeather(string $cityName, string $type = 'base', string $format = 'json')
+```
+- $cityName -城市名
+- $type -返回内容类型 base:实时天气 all:返回预报天气,默认为base
+- $format -返回内容格式 默认为json ,可以指定为xml
+    
+## 参考
+[高德地图开放平台api接口](https://lbs.amap.com/api/webservice/guide/api/weatherinfo/)
 ## License
 
 MIT
