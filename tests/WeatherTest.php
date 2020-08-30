@@ -57,7 +57,7 @@ class WeatherTest extends TestCase
             'output' => 'json',
         ];
         $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
-        $client->allows()->get($url, $query)->andReturn($response);
+        $client->allows()->get($url, ['query' => $query])->andReturn($response);
 
         //将客户端返回添加到weather对象中去
         $weather = \Mockery::mock(Weather::class, ['mokey-key', $url])
