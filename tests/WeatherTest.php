@@ -56,7 +56,7 @@ class WeatherTest extends TestCase
             'extensions' => 'base',
             'output' => 'json',
         ];
-        $url = 'https://qrestapi.amap.com/v3/weather/weatherInfo';
+        $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
         $client->allows()->get($url, $query)->andReturn($response);
 
         //将客户端返回添加到weather对象中去
